@@ -33,11 +33,37 @@ array = [1,2,3,4,5,6,7,8]
 # Sample List : ['abc', 'xyz', 'aba', '1221']
 # Expected Result : 2. 
 
-variable = "abcd"
-myList = ['abc', 'xyz', 'aba', '1221']
-count = 0 
-for x in range(0,myList.__len__()) :
-    if (   (myList[x].__len__() >= 2 ) and ( myList[x][0] == myList[x][myList[x].__len__() - 1 ] ) ) :
-        print(myList[x])
-        count += 1
-print(count)
+# variable = "abcd"
+# myList = ['abc', 'xyz', 'aba', '1221']
+# count = 0 
+# for x in range(0,myList.__len__()) :
+#     if (   (myList[x].__len__() >= 2 ) and ( myList[x][0] == myList[x][myList[x].__len__() - 1 ] ) ) :
+#         print(myList[x])
+#         count += 1
+# print(count)
+
+
+# Exercise: List Comprehensions 
+# (i)Write a list comprehension which, from a list, generates a lowercased version of each string that has 
+# length greater than five.
+
+myList2 = ["ARHAM","MOIZ","SHAHEER","SAJJAD","ALI"]
+print(myList2)
+myNewList2 = [x.lower() for x in myList2 if x.__len__() > 5 ]
+        
+print(myNewList2)
+
+#Not a list comprehension method
+# for x in myList2 :
+#     if ( x.__len__() > 5 ) :
+#         elem_ind = myList2.index(x)
+#         myList2[elem_ind] = x.lower()
+
+
+# (ii)Write a Python program to print a specified list after removing the 0th, 4th and 5th elements 
+# Sample List : ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow',’Teapink’]
+# Expected Output : ['Green', 'White', 'Black']
+myList3 = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow','Teapink' ]
+# is not used for identity like either those are same objects sharing same memory location while not in checks the equality
+myNewList3 = [myList3[x]  for x in range(myList3.__len__() ) if x not in (0,4,5) ]
+print(myNewList3)
